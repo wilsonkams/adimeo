@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for p in post %}
+                <div class="post-card">
+                    <img src="{{ asset('uploads/' ~ p.image) }}" class="responsive-img">
+                    <h2>Titre de l'image: {{ p.titre }}</h2>
+                    <p> Détails: {{ p.explication }}</p>
+                    <span class="date"> Date de création: {{ p.date|date('d/m/Y') }}</span>
+                    <a href="{{ path('editImage', {'id': p.id}) }}">Modifier le post</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

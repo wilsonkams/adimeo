@@ -1,0 +1,21 @@
+{# templates/includes/post_form.html.twig #}
+{{ form_start(form, {'attr': {'class': 'row'}}) }}
+    
+    <div class="col-md-4 mb-3">
+        {{ form_widget(form.titre, {'attr': {'placeholder': 'Titre du post'}}) }}
+        <span class="error">{{ form_errors(form.titre) }}</span>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        {{ form_widget(form.explication, {'attr': {'placeholder': 'Détail du post'}}) }}
+        <span class="error">{{ form_errors(form.explication) }}</span>
+    </div>
+
+    <div class="input-field col s12 m12 l12">
+        {{ form_widget(form.image) }}
+    </div>
+
+    <div class="input-field col s12 m12 l12">
+        <input type="submit" name="" value="Enregistrer" class="btn btn-primary">
+    </div>
+{{ form_end(form) }}
